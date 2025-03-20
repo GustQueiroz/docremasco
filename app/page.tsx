@@ -112,19 +112,21 @@ export default function Home() {
             className="md:hidden bg-white border-t"
           >
             <div className="container mx-auto px-4 py-2 flex flex-col">
-              {["home", "menu", "location", "about"].map((section) => (
-                <button
-                  key={section}
-                  onClick={() => scrollToSection(section)}
-                  className={`py-2 text-left text-sm font-medium transition-colors ${
-                    activeSection === section
-                      ? "text-red-600"
-                      : "text-gray-600 hover:text-red-500"
-                  }`}
-                >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
-                </button>
-              ))}
+              {["Inicio", "Cardápio", "Como Chegar", "Sobre Nós"].map(
+                (section) => (
+                  <button
+                    key={section}
+                    onClick={() => scrollToSection(section)}
+                    className={`py-2 text-left text-sm font-medium transition-colors ${
+                      activeSection === section
+                        ? "text-red-600"
+                        : "text-gray-600 hover:text-red-500"
+                    }`}
+                  >
+                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  </button>
+                )
+              )}
             </div>
           </motion.div>
         )}
