@@ -79,19 +79,21 @@ export default function Home() {
           </div>
 
           <nav className="hidden md:flex space-x-6">
-            {["home", "menu", "location", "about"].map((section) => (
-              <button
-                key={section}
-                onClick={() => scrollToSection(section)}
-                className={`text-sm font-medium transition-colors ${
-                  activeSection === section
-                    ? "text-red-600 border-b-2 border-red-600"
-                    : "text-gray-600 hover:text-red-500"
-                }`}
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </button>
-            ))}
+            {["Inicio", "Cardápio", "Como Chegar", "Sobre Nós"].map(
+              (section) => (
+                <button
+                  key={section}
+                  onClick={() => scrollToSection(section)}
+                  className={`text-sm font-medium transition-colors ${
+                    activeSection === section
+                      ? "text-red-600 border-b-2 border-red-600"
+                      : "text-gray-600 hover:text-red-500"
+                  }`}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </button>
+              )
+            )}
           </nav>
 
           <button
@@ -536,9 +538,11 @@ export default function Home() {
                           Horário de Funcionamento
                         </h3>
                         <p className="text-gray-600">
-                          Segunda a Sábado: 6:00 às 15:00
+                          Segunda a Sexta: 6:00 às 15:00
                         </p>
-                        <p className="text-gray-600">Domingo: Fechado</p>
+                        <p className="text-gray-600">
+                          Sabados e Domingos: Fechado
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -547,7 +551,7 @@ export default function Home() {
                         <h3 className="font-bold text-gray-900 mb-1">
                           Contato
                         </h3>
-                        <p className="text-gray-600">(11) 99999-9999</p>
+                        <p className="text-gray-600">(11) 98804-6178</p>
                       </div>
                     </div>
                   </div>
