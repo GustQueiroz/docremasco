@@ -173,13 +173,14 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="md:w-1/2 relative"
+              className="w-full md:w-1/2 relative"
             >
               <div className="relative h-64 md:h-96 w-full rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/rua.png"
+                  src="/rua.webp"
                   alt="Docremasco Food Truck"
                   fill
+                  priority
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -563,13 +564,14 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="md:w-1/2"
+              className="w-full md:w-1/2 relative"
             >
               <div className="relative h-64 md:h-80 w-full rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src="/mapa.png"
                   alt="Mapa de localização"
                   fill
+                  priority
                   className="object-cover"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -618,13 +620,14 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="md:w-1/2"
+              className="w-full md:w-1/2 relative"
             >
               <div className="relative h-64 md:h-96 w-full rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="/rua.png"
+                  src="/rua.webp"
                   alt="Docremasco Food Truck"
                   fill
+                  priority
                   className="object-cover"
                 />
               </div>
@@ -666,7 +669,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-red-600 to-orange-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <motion.div
@@ -699,7 +701,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="py-8 bg-gray-900 text-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
