@@ -6,7 +6,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { Clock, MapPin, Phone, ShoppingBag, MenuIcon, X } from "lucide-react";
+import {
+  Clock,
+  MapPin,
+  Phone,
+  ShoppingBag,
+  MenuIcon,
+  X,
+  MessageCircle,
+} from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -55,6 +63,12 @@ export default function Home() {
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
+  };
+
+  const openWhatsApp = () => {
+    const phoneNumber = "5511988046178"; // Formatado para WhatsApp (55 + DDD + número)
+    const message = encodeURIComponent("Vim do site e tenho interesse");
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
 
   return (
@@ -168,6 +182,12 @@ export default function Home() {
                   className="border-red-600 text-red-600 hover:bg-red-50"
                 >
                   Como Chegar
+                </Button>
+                <Button
+                  onClick={openWhatsApp}
+                  className="bg-green-600 hover:bg-green-700 text-white"
+                >
+                  <MessageCircle className="mr-2 h-4 w-4" /> Chame no WhatsApp
                 </Button>
               </div>
             </motion.div>
@@ -843,7 +863,15 @@ export default function Home() {
           </div>
           <div className="mt-8 pt-4 border-t border-gray-800 text-center text-sm text-gray-500">
             &copy; {new Date().getFullYear()} Docremasco. Todos os direitos
-            reservados.
+            reservados - Site feito por{" "}
+            <a
+              href="https://linkedin.com/in/gust-queiroz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:text-blue-600"
+            >
+              Gustavo Queiroz
+            </a>
           </div>
         </div>
       </footer>
