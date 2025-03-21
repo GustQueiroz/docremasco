@@ -179,7 +179,7 @@ export default function Home() {
             >
               <div className="relative h-64 md:h-96 w-full rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/rua.webp"
+                  src="/rua.jpeg"
                   alt="Docremasco Food Truck"
                   fill
                   priority
@@ -243,6 +243,12 @@ export default function Home() {
               >
                 Salgados
               </TabsTrigger>
+              <TabsTrigger
+                value="almoços"
+                className="data-[state=active]:bg-red-600 data-[state=active]:text-white"
+              >
+                Almoços
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="lanches">
@@ -275,14 +281,14 @@ export default function Home() {
                   {
                     name: "X Churrasco",
                     description: "Bife, queijo, maionese, alface e tomate",
-                    price: "R$ 17,00",
+                    price: "R$ 18,00",
                     image: "/xchurrasco.jpeg",
                   },
                   {
                     name: "X Salada",
                     description:
                       "Hambúrguer, maionese, queijo, alface e tomate",
-                    price: "R$ 10,00",
+                    price: "R$ 12,00",
                     image: "/xsalada.jpeg",
                   },
                   {
@@ -448,11 +454,117 @@ export default function Home() {
                     price: "R$ 7,00",
                     image: "/salgados.jpeg",
                   },
+                ].map((item, index) => (
+                  <motion.div key={index} variants={item}>
+                    <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                      <div className="flex p-4">
+                        <div className="mr-4 relative w-20 h-20 rounded-md overflow-hidden flex-shrink-0">
+                          <Image
+                            src={item.image || "/placeholder.svg"}
+                            alt={item.name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <CardContent className="p-0 flex-1">
+                          <div className="flex justify-between items-start mb-1">
+                            <h3 className="font-bold text-gray-900">
+                              {item.name}
+                            </h3>
+                            <span className="font-bold text-red-600">
+                              {item.price}
+                            </span>
+                          </div>
+                          {item.description && (
+                            <p className="text-sm text-gray-600">
+                              {item.description}
+                            </p>
+                          )}
+                        </CardContent>
+                      </div>
+                    </Card>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </TabsContent>
+
+            <TabsContent value="almoços">
+              <motion.div
+                variants={container}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              >
+                {[
                   {
-                    name: "Mini Pizza",
-                    description: "Mussarela",
-                    price: "R$ 10,00",
-                    image: "/minipizza.jpeg",
+                    name: "Picadinho com Farofa",
+                    description: "Marmitex com arroz, feijão e salada",
+                    price: "R$ 21,00",
+                    image: "/placeholder.svg",
+                  },
+                  {
+                    name: "Calabresa Acebolada com Ovo",
+                    description: "Marmitex com arroz, feijão e salada",
+                    price: "R$ 21,00",
+                    image: "/placeholder.svg",
+                  },
+                  {
+                    name: "Strogonoff de Frango",
+                    description: "Marmitex com arroz, feijão e salada",
+                    price: "R$ 21,00",
+                    image: "/placeholder.svg",
+                  },
+                  {
+                    name: "Filé de Frango Grelhado",
+                    description: "Marmitex com arroz, feijão e salada",
+                    price: "R$ 21,00",
+                    image: "/placeholder.svg",
+                  },
+                  {
+                    name: "Filé de Frango à Milanesa",
+                    description: "Marmitex com arroz, feijão e salada",
+                    price: "R$ 21,00",
+                    image: "/placeholder.svg",
+                  },
+                  {
+                    name: "Filé de Frango à Parmegiana",
+                    description: "Marmitex com arroz, feijão e salada",
+                    price: "R$ 21,00",
+                    image: "/placeholder.svg",
+                  },
+                  {
+                    name: "Omelete",
+                    description: "Marmitex com arroz, feijão e salada",
+                    price: "R$ 21,00",
+                    image: "/placeholder.svg",
+                  },
+                  {
+                    name: "Terça: Bife à Rolê",
+                    description:
+                      "Especial de terça-feira com arroz, feijão e salada",
+                    price: "R$ 21,00",
+                    image: "/placeholder.svg",
+                  },
+                  {
+                    name: "Quarta: Feijoada",
+                    description:
+                      "Especial de quarta-feira com arroz e acompanhamentos",
+                    price: "R$ 21,00",
+                    image: "/placeholder.svg",
+                  },
+                  {
+                    name: "Quinta: Macarrão à Bolonhesa",
+                    description: "Especial de quinta-feira com salada",
+                    price: "R$ 21,00",
+                    image: "/placeholder.svg",
+                  },
+                  {
+                    name: "Sexta: Filé de Peixe",
+                    description:
+                      "Especial de sexta-feira com arroz, feijão e salada",
+                    price: "R$ 21,00",
+                    image: "/placeholder.svg",
                   },
                 ].map((item, index) => (
                   <motion.div key={index} variants={item}>
@@ -626,7 +738,7 @@ export default function Home() {
             >
               <div className="relative h-64 md:h-96 w-full rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="/rua.webp"
+                  src="/rua.jpeg"
                   alt="Docremasco Food Truck"
                   fill
                   priority
